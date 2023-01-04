@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/sanitize.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="./styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>juneco sign-up</title>
+</head>
+<body>
+  <aside>
+    <div class="logo-box">𝕛𝕦𝕟𝕖𝕔𝕠</div>
+  </aside>
+  <main>
+    <div class="presentation-text">This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <span class="italics">now</span> to get started.<br><br>You <span class="italics">know</span> you want to.</div>
+    <div class="form-container">
+      <h1>Let us know your needs</h1>
+      <form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="get" id="sign-up__form">
+        <div class="form-row">
+          <label for="first-name">PRENOM :</label>
+          <input type="text" id="first-name" name="first-name" minlength="2" required>
+        </div>
+        <div class="form-row">
+          <label for="last-name">NOM :</label>
+          <input type="text" id="last-name" name="last-name" minlength="2" required>
+        </div>
+        <div class="form-row">
+          <label for="email">ADRESSE E-MAIL :</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-row">
+          <label for="phone">TELEPHONE :</label>
+          <input type="tel" id="phone" name="phone" placeholder="Format : 0771234567" pattern="[0-9]{10}" required>
+        </div>
+        <div class="form-row">
+          <label for="password">MOT DE PASSE :</label>
+          <input type="password" id="password" name="password" minlength="5" required>
+        </div>
+        <div class="form-row">
+          <label for="password-confirm">CONFIRMEZ LE MOT DE PASSE :</label>
+          <input type="password" id="password-confirm" name="password-confirm" required>
+        </div>
+      </form>
+    </div>
+    <input type="submit" form="sign-up__form" class="form__submit-button" value="Submit"/>
+  </main>
+</body>
+</html>
