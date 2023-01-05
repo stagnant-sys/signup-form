@@ -19,29 +19,31 @@
       <h1>Let us know your needs</h1>
       <form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="get" id="sign-up__form">
         <div class="form-row">
-          <label for="first-name">PRENOM :</label>
-          <input type="text" id="first-name" name="first-name" minlength="2" required>
+          <label for="first-name">PRENOM : <span class="aria-required">*</span></label>
+          <input type="text" id="first-name" name="first-name" pattern="^[^0-9]+$" minlength="2" required>
         </div>
         <div class="form-row">
-          <label for="last-name">NOM :</label>
+          <label for="last-name">NOM : <span class="aria-required">*</span></label>
           <input type="text" id="last-name" name="last-name" minlength="2" required>
         </div>
         <div class="form-row">
-          <label for="email">ADRESSE E-MAIL :</label>
+          <label for="email">ADRESSE E-MAIL : <span class="aria-required">*</span></label>
           <input type="email" id="email" name="email" required>
         </div>
         <div class="form-row">
           <label for="phone">TELEPHONE :</label>
-          <input type="tel" id="phone" name="phone" placeholder="Format : 0771234567" pattern="[0-9]{10}" required>
+          <input type="tel" id="phone" name="phone" placeholder="Format : 0771234567" pattern="[0-9]{10}">
         </div>
         <div class="form-row">
-          <label for="password">MOT DE PASSE :</label>
+          <label for="password">MOT DE PASSE : <span class="aria-required">*</span></label>
           <input type="password" id="password" name="password" minlength="5" required>
         </div>
         <div class="form-row">
-          <label for="password-confirm">CONFIRMEZ LE MOT DE PASSE :</label>
+          <label for="password-confirm">CONFIRMEZ LE MOT DE PASSE : <span class="aria-required">*</span></label>
           <input type="password" id="password-confirm" name="password-confirm" required>
         </div>
+
+        <p class="aria-required">* Champ obligatoire</p>
       </form>
     </div>
     <input type="submit" form="sign-up__form" class="form__submit-button" value="Submit"/>

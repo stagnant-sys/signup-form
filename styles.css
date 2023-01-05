@@ -10,6 +10,10 @@ body {
     body {
       flex-direction: column; } }
 
+p {
+  margin: 0;
+  padding: 0; }
+
 h1 {
   font-size: 1.4rem;
   padding: 0;
@@ -78,19 +82,28 @@ form {
   font-size: 0.8rem;
   letter-spacing: 1px; }
 
+.aria-required {
+  color: #f67272; }
+
 .form-row input {
   font: inherit;
   min-width: 15rem;
   border: 1px solid #dddddd;
+  background-color: #ffffff;
   border-radius: 5px;
   padding: 5px; }
+  .form-row input::placeholder {
+    color: #aaaaaa; }
   .form-row input:hover {
     outline: 1px solid #555555; }
   .form-row input:active, .form-row input:focus {
-    border: 1px solid #E7AC2A;
-    outline: none; }
+    outline: 3px solid #E7AC2A; }
+  .form-row input:invalid:focus {
+    background-color: red; }
   .form-row input:valid {
     background-color: #7fbc5688; }
+  .form-row input:optional {
+    background-color: #ffffff; }
 
 .form__submit-button {
   padding: 0 6rem 0 3rem; }

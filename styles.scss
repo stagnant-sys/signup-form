@@ -13,6 +13,11 @@ body {
   }
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
   font-size: 1.4rem;
   padding:0;
@@ -94,12 +99,21 @@ form {
   letter-spacing: 1px;
 }
 
+.aria-required {
+  color: rgb(246, 114, 114);
+}
+
 .form-row input {
   font: inherit;
   min-width: 15rem;
   border: 1px solid #dddddd;
+  background-color: #ffffff;
   border-radius: 5px;
   padding: 5px;
+
+  &::placeholder {
+    color:#aaaaaa;
+  }
 
   &:hover {
     outline: 1px solid #555555;
@@ -107,12 +121,19 @@ form {
 
   &:active,
   &:focus {
-    border: 1px solid #E7AC2A;
-    outline: none;
+    outline: 3px solid #E7AC2A;
+  }
+
+  &:invalid:focus {
+    background-color: red;
   }
 
   &:valid {
     background-color: #7fbc5688;
+  }
+
+  &:optional {
+    background-color: #ffffff;
   }
 }
 
