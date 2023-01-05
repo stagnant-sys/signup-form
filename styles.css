@@ -3,33 +3,53 @@
   font-family: 'Cabin', sans-serif;
   /*border: 1px dotted grey;*/ }
 
+html {
+  height: 100%; }
+
 body {
+  margin: 0;
+  height: 100%;
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  align-items: center;
+  background-color: #f7f7f7; }
   @media (max-width: 40rem) {
     body {
       flex-direction: column; } }
 
 p {
-  margin: 0;
-  padding: 0; }
+  margin: 0 0 1rem 0;
+  padding: 0;
+  font-size: 0.8rem; }
 
 h1 {
   font-size: 1.4rem;
   padding: 0;
-  margin: 0;
-  margin-bottom: 1rem; }
+  margin: 0; }
 
 aside {
   width: 33%;
   background-image: url(./images/markus-spiske-DzgLAZXNFRo-unsplash.jpg);
   background-size: cover;
   height: 100vh;
-  position: relative; }
+  position: fixed; }
   @media (max-width: 40rem) {
     aside {
       width: 100%;
-      height: 100%; } }
+      height: 100%;
+      position: relative; } }
+
+.credit {
+  color: white;
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  text-align: center; }
+  .credit a {
+    color: white; }
+  @media (max-width: 40rem) {
+    .credit {
+      display: none; } }
 
 .logo-box {
   color: white;
@@ -44,15 +64,18 @@ aside {
       position: static; } }
 
 main {
+  padding: 3rem 0;
+  position: relative;
+  left: 33%;
   width: 67%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  justify-content: center;
-  background-color: #dddddd; }
+  justify-content: center; }
   @media (max-width: 40rem) {
     main {
-      width: 100%; } }
+      width: 100%;
+      position: static; } }
 
 .presentation-text {
   font-size: 1.4rem;
@@ -64,19 +87,30 @@ main {
 
 .form-container {
   background-color: white;
-  padding: 3rem 10% 3rem 3rem; }
+  padding: 1rem 20% 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 3px 7px 0px #444444; }
+  @media (max-width: 40rem) {
+    .form-container {
+      padding: 1rem;
+      align-items: center; } }
 
 form {
   display: flex;
   flex-wrap: wrap;
   column-gap: 5rem;
-  row-gap: 2rem; }
+  row-gap: 1rem; }
+  @media (max-width: 40rem) {
+    form {
+      justify-content: center; } }
 
 .form-row {
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  min-width: 40%; }
+  min-width: 40%;
+  position: relative; }
 
 .form-row label {
   font-size: 0.8rem;
@@ -97,15 +131,45 @@ form {
   .form-row input:hover {
     outline: 1px solid #555555; }
   .form-row input:active, .form-row input:focus {
-    outline: 3px solid #E7AC2A; }
+    outline: 3px solid #E7AC2A;
+    box-shadow: 1px 1px 5px #444444; }
   .form-row input:invalid:focus {
-    background-color: red; }
+    background-color: rgba(255, 0, 0, 0.505); }
   .form-row input:valid {
-    background-color: #7fbc5688; }
+    background-color: #7fbc5652; }
+  .form-row input:focus:valid {
+    outline-color: #5e8b3f; }
   .form-row input:optional {
     background-color: #ffffff; }
 
+.error {
+  display: none;
+  color: #f67272;
+  position: absolute;
+  bottom: -42px;
+  font-weight: 700;
+  font-size: 1rem; }
+
+.submit-button__container {
+  padding: 1rem 0 0 3rem; }
+
 .form__submit-button {
-  padding: 0 6rem 0 3rem; }
+  padding: 0.5rem 2rem;
+  font-size: 1.2rem;
+  background-color: #7fbc5652;
+  border-color: #5e8b3f;
+  border-radius: 5px; }
+  .form__submit-button:active {
+    background-color: #7fbc56c4; }
+
+.login-text {
+  margin-top: 1rem;
+  font-size: 1rem; }
+  .login-text a {
+    font-weight: 700;
+    text-decoration: none;
+    color: #7fbc56; }
+    .login-text a:hover, .login-text a:active {
+      color: #5d8b3e; }
 
 /*# sourceMappingURL=styles.css.map */

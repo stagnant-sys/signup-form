@@ -4,9 +4,18 @@
   /*border: 1px dotted grey;*/
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  margin: 0;
+  height: 100%;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  background-color: #f7f7f7;
+
 
   @media (max-width: 40rem) {
     flex-direction: column;    
@@ -14,15 +23,15 @@ body {
 }
 
 p {
-  margin: 0;
+  margin:0 0 1rem 0;
   padding: 0;
+  font-size: 0.8rem;
 }
 
 h1 {
   font-size: 1.4rem;
   padding:0;
   margin:0;
-  margin-bottom:1rem;
 }
 
 aside {
@@ -30,11 +39,28 @@ aside {
   background-image: url(./images/markus-spiske-DzgLAZXNFRo-unsplash.jpg);
   background-size: cover;
   height: 100vh;
-  position: relative;
+  position: fixed;
 
   @media (max-width: 40rem) {
     width: 100%;
-    height: 100%;    
+    height: 100%;
+    position: relative;
+  }
+}
+
+.credit {
+  color:white;
+  position: absolute;
+  bottom:1rem;
+  width: 100%;
+  text-align: center;
+
+  a {
+    color: white;
+  }
+
+  @media (max-width: 40rem) {
+    display: none;
   }
 }
 
@@ -53,15 +79,18 @@ aside {
 }
 
 main {
+  padding: 3rem 0;
+  position: relative;
+  left: 33%;
   width: 67%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   justify-content: center;
-  background-color: #dddddd;
 
   @media (max-width: 40rem) {
     width: 100%;    
+    position: static;
   }
 }
 
@@ -77,14 +106,26 @@ main {
 
 .form-container {
   background-color: white;
-  padding: 3rem 10% 3rem 3rem;
+  padding: 1rem 20% 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 3px 7px 0px #444444;
+
+  @media (max-width: 40rem) {
+    padding: 1rem;
+    align-items: center;
+  }
 }
 
 form {
   display: flex;
   flex-wrap: wrap;
   column-gap: 5rem;
-  row-gap: 2rem;
+  row-gap: 1rem;
+
+  @media (max-width: 40rem) {
+    justify-content: center;
+  }
 }
 
 .form-row {
@@ -92,6 +133,7 @@ form {
   flex-direction: column;
   max-width: 100%;
   min-width: 40%;
+  position: relative;
 }
 
 .form-row label {
@@ -122,14 +164,19 @@ form {
   &:active,
   &:focus {
     outline: 3px solid #E7AC2A;
+    box-shadow: 1px 1px 5px #444444;
   }
 
   &:invalid:focus {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.505);
   }
 
   &:valid {
-    background-color: #7fbc5688;
+    background-color: #7fbc5652;
+  }
+
+  &:focus:valid {
+    outline-color: #5e8b3f;
   }
 
   &:optional {
@@ -137,6 +184,43 @@ form {
   }
 }
 
+.error {
+  display: none;
+  color: rgb(246, 114, 114);
+  position: absolute;
+  bottom: -42px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.submit-button__container {
+  padding: 1rem 0 0 3rem;
+}
+
 .form__submit-button {
-  padding: 0 6rem 0 3rem;
+  padding: 0.5rem 2rem;
+  font-size: 1.2rem;
+  background-color: #7fbc5652;
+  border-color: #5e8b3f;
+  border-radius: 5px;
+
+  &:active {
+    background-color: #7fbc56c4;
+  }
+}
+
+.login-text {
+  margin-top: 1rem;
+  font-size: 1rem;
+
+  a {
+    font-weight: 700;
+    text-decoration: none;
+    color: #7fbc56;
+
+    &:hover,
+    &:active {
+      color: #5d8b3e;
+    }
+  }
 }
